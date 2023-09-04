@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.kabrishka.shoppinglist.R
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +23,11 @@ class MainActivity : AppCompatActivity() {
         viewModel.shopList.observe(this) {
             // внутри адаптера создается новый поток, когда вычисления окончены список обновляется
             shopListAdapter.submitList(it)
+        }
+        val btnAddItem = findViewById<FloatingActionButton>(R.id.button_add_shop_item)
+        btnAddItem.setOnClickListener {
+            val intent = ShopItemActivity.newIntentAddItem(this)
+            startActivity(intent)
         }
     }
 
@@ -73,7 +79,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupClickListener() {
         shopListAdapter.onShopItemClickListener = {
-            TODO()
+            val intent = ShopItemActivity.newIntentEditItem(this, it.id)
+            startActivity(intent)
         }
     }
 }
