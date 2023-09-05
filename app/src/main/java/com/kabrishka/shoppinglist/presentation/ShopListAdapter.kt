@@ -2,7 +2,11 @@ package com.kabrishka.shoppinglist.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import com.kabrishka.shoppinglist.R
+import com.kabrishka.shoppinglist.databinding.ItemShopDisabledBinding
+import com.kabrishka.shoppinglist.databinding.ItemShopEnabledBinding
 import com.kabrishka.shoppinglist.domain.ShopItem
 
 class ShopListAdapter :
@@ -17,21 +21,29 @@ class ShopListAdapter :
             VIEW_TYPE_DISABLED -> R.layout.item_shop_disabled
             else -> throw RuntimeException("Unknown view type: $viewType")
         }
-        val view = LayoutInflater.from(parent.context).inflate(layout, parent, false)
-        return ShopItemViewHolder(view)
+        val binding = DataBindingUtil.inflate<ViewDataBinding>(LayoutInflater.from(parent.context), layout, parent, false)
+        return ShopItemViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ShopItemViewHolder, position: Int) {
         val shopItem = getItem(position)
-        holder.tvName.text = shopItem.name
-        holder.tvCount.text = shopItem.count.toString()
+        val binding = holder.binding
 
-        holder.itemView.setOnClickListener {
+        when (binding) {
+            is ItemShopDisabledBinding -> {
+                binding.shopItem = shopItem
+            }
+            is ItemShopEnabledBinding -> {
+                binding.shopItem = shopItem
+            }
+        }
+
+        binding.root.setOnClickListener {
             onShopItemClickListener?.invoke(shopItem)
             true
         }
 
-        holder.itemView.setOnLongClickListener {
+        binding.root.setOnLongClickListener {
             onShopItemLongClickListener?.invoke(shopItem)
             true
         }
