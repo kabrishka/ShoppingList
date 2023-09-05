@@ -11,6 +11,7 @@ import com.kabrishka.shoppinglist.domain.ShopItem
 
 class ShopItemViewModel : ViewModel() {
 
+    // не норм
     private val repository = ShopListRepositoryImpl
 
     private val getShopItemUseCase = GetShopItemUseCase(repository)
