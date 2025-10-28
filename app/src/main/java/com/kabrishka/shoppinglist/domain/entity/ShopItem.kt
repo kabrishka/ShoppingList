@@ -1,4 +1,4 @@
-package com.kabrishka.shoppinglist.domain
+package com.kabrishka.shoppinglist.domain.entity
 
 data class ShopItem(
     val name: String,

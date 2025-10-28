@@ -1,4 +1,4 @@
-package com.kabrishka.shoppinglist.presentation
+package com.kabrishka.shoppinglist.presentation.view
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.kabrishka.shoppinglist.R
-import com.kabrishka.shoppinglist.domain.ShopItem
+import com.kabrishka.shoppinglist.domain.entity.ShopItem
 
 class ShopItemActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinishedListener {
 

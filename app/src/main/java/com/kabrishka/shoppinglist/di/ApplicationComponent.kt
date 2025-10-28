@@ -1,8 +1,8 @@
 package com.kabrishka.shoppinglist.di
 
 import android.app.Application
-import com.kabrishka.shoppinglist.presentation.MainActivity
-import com.kabrishka.shoppinglist.presentation.ShopItemFragment
+import com.kabrishka.shoppinglist.presentation.view.MainActivity
+import com.kabrishka.shoppinglist.presentation.view.ShopItemFragment
 import dagger.BindsInstance
 import dagger.Component
 

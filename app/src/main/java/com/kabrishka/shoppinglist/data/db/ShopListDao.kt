@@ -1,4 +1,4 @@
-package com.kabrishka.shoppinglist.data
+package com.kabrishka.shoppinglist.data.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

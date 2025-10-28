@@ -1,9 +1,11 @@
-package com.kabrishka.shoppinglist.data
+package com.kabrishka.shoppinglist.data.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import com.kabrishka.shoppinglist.domain.ShopItem
-import com.kabrishka.shoppinglist.domain.ShopListRepository
+import com.kabrishka.shoppinglist.data.db.ShopListDao
+import com.kabrishka.shoppinglist.data.mapper.ShopListMapper
+import com.kabrishka.shoppinglist.domain.entity.ShopItem
+import com.kabrishka.shoppinglist.domain.repository.ShopListRepository
 import javax.inject.Inject
 
 // Данный класс можно использовать как зависимость

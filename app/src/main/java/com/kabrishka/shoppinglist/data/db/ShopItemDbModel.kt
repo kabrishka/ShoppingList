@@ -1,8 +1,7 @@
-package com.kabrishka.shoppinglist.data
+package com.kabrishka.shoppinglist.data.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.kabrishka.shoppinglist.domain.ShopItem
 
 @Entity(tableName = "shop_items")
 data class ShopItemDbModel(

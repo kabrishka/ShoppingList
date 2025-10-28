@@ -1,4 +1,4 @@
-package com.kabrishka.shoppinglist.presentation
+package com.kabrishka.shoppinglist.presentation.view
 
 import android.app.Application
 import com.kabrishka.shoppinglist.di.DaggerApplicationComponent

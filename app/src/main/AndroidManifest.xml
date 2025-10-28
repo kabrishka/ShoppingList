@@ -5,7 +5,7 @@
 
     <application
         android:allowBackup="true"
-        android:name=".presentation.ShopApplication"
+        android:name=".presentation.view.ShopApplication"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShoppingList"
         tools:targetApi="31">
-        <activity android:name=".presentation.ShopItemActivity"
+        <activity android:name=".presentation.view.ShopItemActivity"
             android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".presentation.MainActivity"
+            android:name=".presentation.view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

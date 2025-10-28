@@ -1,4 +1,4 @@
-package com.kabrishka.shoppinglist.presentation
+package com.kabrishka.shoppinglist.presentation.view
 
 import android.content.Context
 import android.os.Bundle
@@ -7,14 +7,12 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.textfield.TextInputLayout
-import com.kabrishka.shoppinglist.R
 import com.kabrishka.shoppinglist.databinding.FragmentShopItemBinding
-import com.kabrishka.shoppinglist.domain.ShopItem
+import com.kabrishka.shoppinglist.domain.entity.ShopItem
+import com.kabrishka.shoppinglist.presentation.viewmodel.ShopItemViewModel
+import com.kabrishka.shoppinglist.presentation.viewmodel.ViewModelFactory
 import javax.inject.Inject
 
 class ShopItemFragment : Fragment() {

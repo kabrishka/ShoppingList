@@ -1,10 +1,10 @@
 package com.kabrishka.shoppinglist.di
 
 import android.app.Application
-import com.kabrishka.shoppinglist.data.AppDatabase
-import com.kabrishka.shoppinglist.data.ShopListDao
-import com.kabrishka.shoppinglist.data.ShopListRepositoryImpl
-import com.kabrishka.shoppinglist.domain.ShopListRepository
+import com.kabrishka.shoppinglist.data.db.AppDatabase
+import com.kabrishka.shoppinglist.data.db.ShopListDao
+import com.kabrishka.shoppinglist.data.repository.ShopListRepositoryImpl
+import com.kabrishka.shoppinglist.domain.repository.ShopListRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

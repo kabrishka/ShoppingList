@@ -1,17 +1,11 @@
-package com.kabrishka.shoppinglist.presentation
+package com.kabrishka.shoppinglist.presentation.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kabrishka.shoppinglist.data.ShopListRepositoryImpl
-import com.kabrishka.shoppinglist.domain.DeleteShopItemUseCase
-import com.kabrishka.shoppinglist.domain.EditShopItemUseCase
-import com.kabrishka.shoppinglist.domain.GetShopListUseCase
-import com.kabrishka.shoppinglist.domain.ShopItem
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.cancel
+import com.kabrishka.shoppinglist.domain.usecase.DeleteShopItemUseCase
+import com.kabrishka.shoppinglist.domain.usecase.EditShopItemUseCase
+import com.kabrishka.shoppinglist.domain.usecase.GetShopListUseCase
+import com.kabrishka.shoppinglist.domain.entity.ShopItem
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

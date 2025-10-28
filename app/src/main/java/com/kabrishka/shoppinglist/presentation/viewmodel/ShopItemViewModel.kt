@@ -1,10 +1,10 @@
-package com.kabrishka.shoppinglist.presentation
+package com.kabrishka.shoppinglist.presentation.viewmodel
 
 import androidx.lifecycle.*
-import com.kabrishka.shoppinglist.domain.AddShopItemUseCase
-import com.kabrishka.shoppinglist.domain.EditShopItemUseCase
-import com.kabrishka.shoppinglist.domain.GetShopItemUseCase
-import com.kabrishka.shoppinglist.domain.ShopItem
+import com.kabrishka.shoppinglist.domain.usecase.AddShopItemUseCase
+import com.kabrishka.shoppinglist.domain.usecase.EditShopItemUseCase
+import com.kabrishka.shoppinglist.domain.usecase.GetShopItemUseCase
+import com.kabrishka.shoppinglist.domain.entity.ShopItem
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

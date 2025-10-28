@@ -1,16 +1,18 @@
-package com.kabrishka.shoppinglist.presentation
+package com.kabrishka.shoppinglist.presentation.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.recyclerview.widget.ListAdapter
 import com.kabrishka.shoppinglist.R
 import com.kabrishka.shoppinglist.databinding.ItemShopDisabledBinding
 import com.kabrishka.shoppinglist.databinding.ItemShopEnabledBinding
-import com.kabrishka.shoppinglist.domain.ShopItem
+import com.kabrishka.shoppinglist.domain.entity.ShopItem
+import com.kabrishka.shoppinglist.presentation.model.ShopItemDiffCallback
 
 class ShopListAdapter :
-    androidx.recyclerview.widget.ListAdapter<ShopItem, ShopItemViewHolder>(ShopItemDiffCallback()) {
+    ListAdapter<ShopItem, ShopItemViewHolder>(ShopItemDiffCallback()) {
 
     var onShopItemLongClickListener: ((ShopItem) -> Unit)? = null
     var onShopItemClickListener: ((ShopItem) -> Unit)? = null

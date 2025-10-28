@@ -1,4 +1,4 @@
-package com.kabrishka.shoppinglist.presentation
+package com.kabrishka.shoppinglist.presentation.view
 
 import androidx.databinding.BindingAdapter
 import com.google.android.material.textfield.TextInputLayout

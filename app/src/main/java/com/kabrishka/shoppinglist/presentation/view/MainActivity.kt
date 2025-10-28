@@ -1,16 +1,16 @@
-package com.kabrishka.shoppinglist.presentation
+package com.kabrishka.shoppinglist.presentation.view
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainerView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.kabrishka.shoppinglist.R
 import com.kabrishka.shoppinglist.databinding.ActivityMainBinding
+import com.kabrishka.shoppinglist.presentation.viewmodel.MainViewModel
+import com.kabrishka.shoppinglist.presentation.viewmodel.ViewModelFactory
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinishedListener {
