@@ -15,6 +15,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.kabrishka.shoppinglist.R
 import com.kabrishka.shoppinglist.databinding.FragmentShopItemBinding
 import com.kabrishka.shoppinglist.domain.ShopItem
+import javax.inject.Inject
 
 class ShopItemFragment : Fragment() {
 
@@ -28,10 +29,20 @@ class ShopItemFragment : Fragment() {
     private val binding: FragmentShopItemBinding
     get() = _binding ?: throw RuntimeException("FragmentShopItemBinding == null")
 
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private val component by lazy {
+        (requireActivity().application as ShopApplication).component
+    }
+
+
     // когда только создаем фрагмент, никакие методы ЖЦ не вызываются
     // а когда показываем фрагмент на экране, фрагмент первым делом прикрепляется к активити
     // в этот момент вызывается onAttach
     override fun onAttach(context: Context) {
+        component.inject(this)
+
         super.onAttach(context)
         if (context is OnEditingFinishedListener) onEditingFinishedListener =
             context else throw RuntimeException("Activity must implement listener")
@@ -53,7 +64,7 @@ class ShopItemFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this)[ShopItemViewModel::class.java]
+        viewModel = ViewModelProvider(this, viewModelFactory)[ShopItemViewModel::class.java]
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
         addTextChangeListeners()
